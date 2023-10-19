@@ -23,6 +23,10 @@ export default function page({
   const id = searchParamsF?.get("id");
   const date = new Date();
 
+  console.log(params);
+  console.log(searchParams);
+  console.log(searchParamsF);
+
   // useEffect内はCSRされる。
   // https://nextjs.org/docs/pages/building-your-application/rendering/client-side-rendering
   useEffect(() => {
@@ -48,9 +52,6 @@ export default function page({
           Return Home
         </Link>
       </div>
-      <Link href={{ pathname: "/", query: searchParams }}>
-        <div style={{ fontSize: "18px" }}>Return Home</div>
-      </Link>
     </>
   );
 }
