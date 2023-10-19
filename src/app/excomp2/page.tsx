@@ -3,6 +3,7 @@
 "use client";
 
 import { Suspense, useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 
 export default function page({
   params,
@@ -14,6 +15,9 @@ export default function page({
   const [time, setTime] = useState<string | null>(null);
   const date = new Date();
 
+  const searchParamsF = useSearchParams();
+  const id = searchParamsF?.get("id");
+
   // useEffect内はCSRされる。
   // https://nextjs.org/docs/pages/building-your-application/rendering/client-side-rendering
   useEffect(() => {
@@ -24,7 +28,7 @@ export default function page({
     <Suspense fallback={"loading"}>
       <div>{time}</div>
       <div id="page">Page2 Module</div>
-      <div>id={searchParams?.id}</div>
+      <div>id={id}</div>
       <a href={"/"}>back</a>
     </Suspense>
   );
