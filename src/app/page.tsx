@@ -8,7 +8,7 @@ export default function Home({
   params: { slug: string };
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  const reqId = searchParams?.id;
+  //  const reqId = searchParams?.id;
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -48,12 +48,16 @@ export default function Home({
         />
       </div>
 
+      {/*
       <div>?id=[{reqId}]</div>
+      */}
       {/* ルーティングの実験 */}
       <Link href={"/foo"}>foo </Link>
       <Link href={"/sub"}>sub</Link>
       <h1>以下はappディレクトリ配下のコンポーネント</h1>
+      {/*
       <Link href={{ pathname: "/excomp", query: searchParams }}>excomp</Link>
+      */}
       <Link href={"/excomp2"}>excomp2</Link>
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
         <a
