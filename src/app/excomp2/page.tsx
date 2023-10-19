@@ -15,6 +15,9 @@ export default function page({
   const [time, setTime] = useState<string | null>(null);
   const date = new Date();
 
+  // CSRのためブラウザに表示される
+  console.log(date.toLocaleString());
+
   const searchParamsF = useSearchParams();
   const id = searchParamsF?.get("id");
 

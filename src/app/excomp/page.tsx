@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-// CSRしたい場合、設定する。
 import Link from "next/link";
+
+export const dynamic = "force-static";
 
 // 参考
 // https://nextjs.org/docs/app/building-your-application/routing
@@ -13,6 +14,7 @@ export default function page({
   params: { slug: string };
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
+  // SSRページのためブラウザには表示されない
   console.log(params);
   console.log(searchParams);
 
@@ -36,4 +38,3 @@ export default function page({
     </>
   );
 }
-export const dynamic = "force-static";
