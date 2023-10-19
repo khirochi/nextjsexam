@@ -1,5 +1,3 @@
-"use client";
-
 // 参考
 // https://nextjs.org/docs/app/building-your-application/routing
 // https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts
