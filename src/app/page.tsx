@@ -8,7 +8,7 @@ export default function Home({
   params: { slug: string };
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  //  const reqId = searchParams?.id;
+  const reqId = searchParams?.id;
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -48,9 +48,7 @@ export default function Home({
         />
       </div>
 
-      {/*
       <div>?id=[{reqId}]</div>
-      */}
       {/* ルーティングの実験 */}
       <Link href={"/foo"}>foo </Link>
       <Link href={"/sub"}>sub</Link>
@@ -131,3 +129,4 @@ export default function Home({
     </main>
   );
 }
+export const dynamic = "force-static";
