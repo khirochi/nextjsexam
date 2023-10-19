@@ -49,9 +49,10 @@ export default function Home({
       </div>
 
       <div>?id=[{reqId}]</div>
-      {/* ルーティングの実験 */}
+      {/* ルーティングの実験
       <Link href={"/foo"}>foo </Link>
       <Link href={"/sub"}>sub</Link>
+       */}
       <h1>以下はappディレクトリ配下のコンポーネント</h1>
       <Link href={{ pathname: "/excomp", query: searchParams }}>excomp</Link>
       <Link href={"/excomp2"}>excomp2</Link>

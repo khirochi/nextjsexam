@@ -4,6 +4,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 // 参考
 // https://nextjs.org/docs/app/building-your-application/routing
@@ -18,6 +19,8 @@ export default function page({
 }) {
   const [time, setTime] = useState<string | null>(null);
 
+  const searchParamsF = useSearchParams();
+  const id = searchParamsF?.get("id");
   const date = new Date();
 
   // useEffect内はCSRされる。
@@ -36,6 +39,7 @@ export default function page({
           searchParams=[key:{key} value={searchParams[key]}]
         </div>
       ))}
+      <div>id={id}</div>
       <div>
         <Link
           href={{ pathname: "/", query: searchParams }}
