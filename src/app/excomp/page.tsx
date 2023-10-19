@@ -7,7 +7,7 @@ export const dynamic = "force-static";
 // https://nextjs.org/docs/app/building-your-application/routing
 // https://nextjs.org/docs/app/api-reference/file-conventions/page
 
-export default function page({
+export default async function page({
   params,
   searchParams,
 }: {
@@ -18,6 +18,13 @@ export default function page({
   console.log(params);
   console.log(searchParams);
 
+  const holiday = await fetch(
+    "https://holidays-jp.github.io/api/v1/date.json",
+    // fetch関数にcache: 'no-store'オプションを追加するとSSRを使えます。
+    { cache: "no-store" }
+  );
+  const days = await holiday.json();
+
   return (
     <>
       <div id="page">Page Module</div>
@@ -25,6 +32,11 @@ export default function page({
       {Object.keys(searchParams).map((key) => (
         <div key={key}>
           searchParams=[key:{key} value={searchParams[key]}]
+        </div>
+      ))}
+      {Object.keys(days).map((key) => (
+        <div key={key}>
+          {key} {days[key]}
         </div>
       ))}
       <div>
