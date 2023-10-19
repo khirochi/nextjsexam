@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 // CSRしたい場合、設定する。
 "use client";
 
@@ -15,7 +16,7 @@ export default function page({
   params: { slug: string };
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  const [time, setTime] = useState(null);
+  const [time, setTime] = useState<string | null>(null);
 
   const date = new Date();
 

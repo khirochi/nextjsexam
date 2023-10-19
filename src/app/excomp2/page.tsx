@@ -1,10 +1,11 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 // CSRしたい場合、設定する。
 "use client";
 
 import { Suspense, useState, useEffect } from "react";
 
 export default function page() {
-  const [time, setTime] = useState(null);
+  const [time, setTime] = useState<string | null>(null);
   const date = new Date();
 
   // useEffect内はCSRされる。
