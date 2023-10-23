@@ -29,7 +29,7 @@ jobs:
           rm -r -fo ./.next/cache
 
       - name: Zip artifact for deployment
-        run: zip release.zip ./* .next -qr
+        run: Compress-Archive -Path ./* .next -DestinationPath release.zip
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
