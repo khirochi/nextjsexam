@@ -30,7 +30,7 @@ jobs:
 
       - name: Zip artifact for deployment
         run: |
-          $compressOption = @{Path = "./*", ".next/*", DestinationPath = "release.zip"}
+          $compressOption = @{Path = "./*", ".next/*" DestinationPath = "release.zip"}
           Compress-Archive @compressOption
 
       - name: Upload artifact for deployment job
