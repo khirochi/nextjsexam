@@ -16,6 +16,7 @@ export default function page({
   const date = new Date();
 
   // CSRのためブラウザに表示される
+  console.log("excomp2/page");
   console.log(date.toLocaleString());
 
   const searchParamsF = useSearchParams();
@@ -32,7 +33,7 @@ export default function page({
       <div>{time}</div>
       <div id="page">Page2 Module</div>
       <div>id={id}</div>
-      <a href={"/"}>back</a>
+      <a href={`/${id ? "?id=" + id : ""}`}>back</a>
     </Suspense>
   );
 }

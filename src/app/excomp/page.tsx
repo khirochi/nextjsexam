@@ -15,13 +15,14 @@ export default async function page({
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
   // SSRページのためブラウザには表示されない
+  console.log("excomp/page");
   console.log(params);
   console.log(searchParams);
 
   const holiday = await fetch(
     "https://holidays-jp.github.io/api/v1/date.json",
     // fetch関数にcache: 'no-store'オプションを追加するとSSRを使えます。
-    { cache: "no-store" }
+    { next: { revalidate: 300 } }
   );
   const days = await holiday.json();
 
