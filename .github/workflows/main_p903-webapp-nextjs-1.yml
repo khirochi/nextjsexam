@@ -29,7 +29,9 @@ jobs:
           rm -r -fo ./.next/cache
 
       - name: Zip artifact for deployment
-        run: Compress-Archive -Path ./* .next -DestinationPath release.zip
+        run: |
+          $compressOption = @{Path = "./*", ".next/*", DestinationPath = "release.zip"}
+          Compress-Archive @compressOption
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
