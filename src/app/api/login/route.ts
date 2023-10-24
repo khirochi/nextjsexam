@@ -2,6 +2,9 @@ import { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { redirect } from "next/navigation";
 
+// route.tsはAPIとなる。
+// https://nextjs.org/docs/app/building-your-application/routing/route-handlers
+
 export async function GET(request: NextRequest) {
   console.log("<><><> login get req", request);
 

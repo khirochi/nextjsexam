@@ -8,11 +8,11 @@ import { redirect } from "next/navigation";
 //export const dynamic = "force-static";
 
 export function GET(request: NextRequest) {
-  const searchParams = request.nextUrl.searchParams;
-  const query = searchParams.get("id");
+  // const searchParams = request.nextUrl.searchParams;
+  // const query = searchParams.get("id");
 
-  return NextResponse.json({ method: "GET", id: query });
-  // redirect("http://localhost:3000/sub?id=abc");
+  // return NextResponse.json({ method: "GET", id: query });
+  redirect("http://localhost:3000/sub?id=abc");
 }
 
 // export async function POST(req: NextRequest) {}

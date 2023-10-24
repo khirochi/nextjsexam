@@ -4,7 +4,7 @@ const nextConfig = {
   // https://learn.microsoft.com/ja-jp/azure/static-web-apps/deploy-nextjs-hybrid#enable-standalone-feature
   // 静的アプリにする場合、有効にする。
   // https://nextjs.org/docs/app/building-your-application/deploying/static-exports
-  output: "export",
+  // output: "export",
 };
 
 module.exports = nextConfig;
