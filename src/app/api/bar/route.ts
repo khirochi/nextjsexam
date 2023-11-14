@@ -10,8 +10,15 @@ import { redirect } from "next/navigation";
 export function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   const query = searchParams.get("id");
+  console.log(searchParams);
+  console.log(searchParams.toString());
 
-  return NextResponse.json({ method: "GET", id: query });
+  return NextResponse.json(
+    { method: "GET", id: query },
+    {
+      status: 400,
+    }
+  );
   // redirect("http://localhost:3000/sub?id=abc");
 }
 
